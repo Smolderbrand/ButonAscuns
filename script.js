@@ -5,7 +5,7 @@ function clickPlay() {
 	answer = Math.floor(Math.random() * totalButtons) + 1;
 	var navButtons = document.getElementById("Content");
 	navButtons.innerHTML = "";
-	for (var i = 1; i <= totalButtons; i++)
+	for (var i = 1; i <= totalButtons; ++i)
 	{
 		console.log(i + " ");
 		var button = document.createElement("button");
@@ -15,7 +15,6 @@ function clickPlay() {
 		button.addEventListener("click", function(event) {
 			var btn = event.target;
 			var page = btn.getAttribute("pageto");
-    			// navButtons.appendChild(btn);
 			if (page == answer) {
 				document.getElementById("Answer").textContent = "You won!";
 			} else {
@@ -25,4 +24,3 @@ function clickPlay() {
 		navButtons.appendChild(document.createTextNode(" "));
 	}
 }
-
